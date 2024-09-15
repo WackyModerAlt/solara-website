@@ -1,0 +1,31 @@
+let navbar = document.querySelector('.navbar')
+let menu_btn = document.querySelector('.hamburger_btn')
+let menu_btn_icon = document.querySelector('.bx-menu')
+let body = document.querySelector('body')
+
+
+menu_btn.onclick = () => {
+    body.classList.toggle('noscroll')
+    navbar.classList.toggle('open')
+    menu_btn_icon.classList.toggle('bx-x')
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        header.addEventListener('click', function () {
+            content.classList.toggle('active');
+
+            if (content.classList.contains('active')) {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    });
+});
